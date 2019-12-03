@@ -100,7 +100,7 @@ function processRequest (request, response) {
     //获取资源文件的绝对路径
   /*  var filePath = path.resolve(__dirname + pathName);*/
    //__dirname是访问项目静态资源的路径 我的项目静态文件都在public下所以我写public可根据自己项目路径来配置哦
-   var documentRoot = 'C:/usmart-demo/code/ng-web';
+   var documentRoot = '/Users/guocongcong/desktop/github/guocongcong-cc.github.io/ng-web';
   var filePath = path.resolve(documentRoot + pathName);
     console.log(filePath);
     //获取对应文件的文档类型
