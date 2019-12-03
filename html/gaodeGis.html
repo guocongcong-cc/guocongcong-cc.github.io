@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>基本地图展示</title>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+    <script src="http://webapi.amap.com/maps?v=1.4.5&key=21f32c507ffd788bdfb93f682b19e595&plugin=AMap.Riding"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+	<style>
+	body{
+	    overflow: hidden;
+	}
+	#container{
+		-webkit-transform:scale(1); 
+		
+	}
+	</style>
+</head>
+<body>
+<div id="container"></div>
+
+<script>
+
+   var map = new AMap.Map('container', {
+	 mapStyle: 'amap://styles/4da05d7d0eb6507b9fccc0ba764a881b',
+	  resizeEnable: true,
+        center: [116.397428, 39.90923],//地图中心点
+        zoom: 13 //地图显示的缩放级别
+
+       // //样式URL
+     });
+
+	     //骑行导航
+      var riding = new AMap.Riding({
+        map: map,
+       // panel: "panel"
+    }); 
+    //根据起终点坐标规划骑行路线
+    riding.search([116.397933,39.844818],[116.440655,39.878694]);
+
+</script>
+</body>
+</html>
